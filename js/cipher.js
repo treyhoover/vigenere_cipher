@@ -2,6 +2,21 @@
 
 ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ .,/?`~[]\\;':!@#$%^&*()_+-=";
 
+function cleanText(text) {
+	var textArray = text.split('');
+	var cleanText = "";
+
+	for (var i = 0; i < text.length; i++){
+		if (ALPHABET.indexOf(textArray[i]) < 0) {
+			// skip this character
+		} else {
+			cleanText += textArray[i];
+		}
+	}
+
+	return cleanText;
+}
+
 // take two letters and return the intersecting letters
 function getIntersect(a, b) {
 	var posA = ALPHABET.indexOf(a);
@@ -26,6 +41,9 @@ function repeatMatchLength(matchStr, matchedStr) {
 }
 
 function encrypt(plainText, keyword) {
+	keyword = (keyword == "") ? "M" : keyword;
+	console.log(keyword);
+	plainText = cleanText(plainText);
 	var cipherText = "";
 
 	keyword = repeatMatchLength(plainText, keyword);
@@ -41,6 +59,8 @@ function encrypt(plainText, keyword) {
 }
 
 function decrypt(cipherText, keyword) {
+	keyword = (keyword == "") ? "M" : keyword;
+	cipherText = cleanText(cipherText);
 	var clearText = "";
 
 	keyword = repeatMatchLength(cipherText, keyword);
