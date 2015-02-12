@@ -1,6 +1,6 @@
 // Vigenère cipher
 
-ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ .,/<>?`~[]\\;':!@#$%^&*()_+-=";
 
 // take two letters and return the intersecting letters
 function getIntersect(a, b) {
