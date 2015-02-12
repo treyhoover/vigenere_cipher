@@ -4,8 +4,9 @@ $(document).ready(function(){
 		var clearTextField = $('.encrypt input[name="cleartext"]');
 		var keywordField = $('.encrypt input[name="keyword"]');
 
-		var clearText = clearTextField.val().toUpperCase();
-		var keyword = keywordField.val().toUpperCase();
+		var clearText = cleanText(clearTextField.val().toUpperCase());
+		var keyword = cleanText(keywordField.val().toUpperCase());
+		keyword = cleanText((keyword == "") ? "*" : keyword);
 
 		var encrypted = encrypt(clearText, keyword);
 
@@ -25,8 +26,9 @@ $(document).ready(function(){
 		var cipherTextField = $('.decrypt input[name="ciphertext"]');
 		var keywordField = $('.decrypt input[name="keyword"]');
 
-		var cipherText = cipherTextField.val().toUpperCase();
-		var keyword = keywordField.val().toUpperCase();
+		var cipherText = cleanText(cipherTextField.val().toUpperCase());
+		var keyword = cleanText(keywordField.val().toUpperCase());
+		keyword = cleanText((keyword == "") ? "*" : keyword);
 
 		var decrypted = decrypt(cipherText, keyword);
 

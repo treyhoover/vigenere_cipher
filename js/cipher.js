@@ -41,8 +41,6 @@ function repeatMatchLength(matchStr, matchedStr) {
 }
 
 function encrypt(plainText, keyword) {
-	keyword = (keyword == "") ? "M" : keyword;
-	console.log(keyword);
 	plainText = cleanText(plainText);
 	var cipherText = "";
 
@@ -59,7 +57,6 @@ function encrypt(plainText, keyword) {
 }
 
 function decrypt(cipherText, keyword) {
-	keyword = (keyword == "") ? "M" : keyword;
 	cipherText = cleanText(cipherText);
 	var clearText = "";
 
