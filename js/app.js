@@ -14,9 +14,9 @@ $(document).ready(function(){
 		keywordField.val('');
 
 		var newRow = $('<tr/>');
-		newRow.append($('<td/>').html(clearText));
-		newRow.append($('<td/>').html(keyword));
-		newRow.append($('<td/>').html(encrypted));
+		newRow.append($('<td/>').addClass('break-word').html(clearText));
+		newRow.append($('<td/>').addClass('break-word').html(keyword));
+		newRow.append($('<td/>').addClass('break-all').html(encrypted));
 
 		$('.encrypt .results-table tbody').append(newRow);
 	});
@@ -36,9 +36,9 @@ $(document).ready(function(){
 		keywordField.val('');
 
 		var newRow = $('<tr/>');
-		newRow.append($('<td/>').html(cipherText));
-		newRow.append($('<td/>').html(keyword));
-		newRow.append($('<td/>').html(decrypted));
+		newRow.append($('<td/>').addClass('break-all').html(cipherText));
+		newRow.append($('<td/>').addClass('break-word').html(keyword));
+		newRow.append($('<td/>').addClass('break-word').html(decrypted));
 
 		$('.decrypt .results-table tbody').append(newRow);
 	});
